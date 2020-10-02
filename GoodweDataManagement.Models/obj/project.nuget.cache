@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "tOsmUUL+iePXSEjwq45lQObCV2DOFvF7mrUt7igAjYLeJJ42cPbs/RM+NEUZ1y6OuIgis+vOFh929Q3MLeQQNQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\hasan.kose\\Source\\Repos\\GoodweToPvOutput\\GoodweDataManagement.Models\\GoodweDataManagement.Models.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\hasan.kose\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\hasan.kose\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

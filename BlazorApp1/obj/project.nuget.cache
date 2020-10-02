@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "OOB8HUCZNRpY7643N+vXeTSsF+nSV7p5BhIYnym8iB3hkQRfV89fWaLOYRnnHTiUODeP9fQ7FFQOenEsXlUgEg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\hasan.kose\\Source\\Repos\\GoodweToPvOutput\\BlazorApp1\\BlazorApp1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\hasan.kose\\.nuget\\packages\\microsoft.aspnetcore.blazor.httpclient\\3.2.0-preview3.20168.3\\microsoft.aspnetcore.blazor.httpclient.3.2.0-preview3.20168.3.nupkg.sha512",
+    "C:\\Users\\hasan.kose\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\hasan.kose\\.nuget\\packages\\system.text.json\\4.7.1\\system.text.json.4.7.1.nupkg.sha512"
+  ],
+  "logs": []
+}
