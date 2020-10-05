@@ -23,42 +23,43 @@ namespace BlazorApp1.Pages
 		protected int currentCount = 0;
 		//protected string data = string.Empty;
 		public string Data { get; set; }
-		public GoodweData GoodweData { get; set; }
+		public List<GoodweData> GoodweData { get; set; }
 
 		protected override async Task OnInitializedAsync()
 		{
 			await Task.Run(GoodweService.TokenRequest);
 			ConfigureTimer();
+			this.GoodweData = new List<GoodweData>();
 		}
 
 		private void ConfigureTimer()
 		{
-			timer = new Timer(10000);
+			timer = new Timer(300000);
 			timer.Elapsed += Timer_Elapsed;
 			timer.Enabled = true;
 		}
 
 		private void Timer_Elapsed(object sender, ElapsedEventArgs e)
 		{
-			if (!getdatabool)
-			{
-				getdatabool = true;
-				GoodweData = GoodweService.GetData().Result;
-				
-				PvOutputService.AddStatus(GoodweData);
+			//if (!getdatabool)
+			//{
+			//getdatabool = true;
+			var latestData = GoodweService.GetData().Result;
 
-				
-			}
+			GoodweData.Add(latestData);
 
+			PvOutputService.AddStatus(latestData);
+
+			if (GoodweData.Count > 100)
+				GoodweData.RemoveAt(0);
+			//}
+			InvokeAsync(StateHasChanged);
 		}
 
 		protected void GetData()
 		{
-			GoodweData = GoodweService.GetData().Result;
-
-			PvOutputService.AddStatus(GoodweData);
+			var latestData = GoodweService.GetData().Result;
+			GoodweData.Add(latestData);
 		}
-
-
 	}
 }

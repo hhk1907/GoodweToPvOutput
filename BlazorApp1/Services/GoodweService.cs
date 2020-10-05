@@ -32,7 +32,7 @@ namespace BlazorApp1.Services
 			HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, "PowerStation/GetMonitorDetailByPowerstationId");
 
 			var powerstationId = Configuration.GetSection("GoodWe").GetSection("powerStationId").Value;
-			string content = @"{""powerStationId"": " + powerstationId + "}";
+			string content = @"{""powerStationId"": """ + powerstationId + "\"}";
 
 
 			request.Content = new StringContent(content,
