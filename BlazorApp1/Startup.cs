@@ -35,6 +35,12 @@ namespace BlazorApp1
 				client.BaseAddress = new Uri("http://semsportal.com:82/api/v2/");
 				client.DefaultRequestHeaders.Add("Accept", "application/json");
 			});
+			services.AddHttpClient<IPvOutputService, PvOutputService>(client =>
+			{
+				client.BaseAddress = new Uri("https://pvoutput.org/service/r2/");
+				client.DefaultRequestHeaders.Add("X-Pvoutput-Apikey", Configuration.GetSection("PvOutput").GetSection("ApiKey").Value);
+				client.DefaultRequestHeaders.Add("X-Pvoutput-SystemId", Configuration.GetSection("PvOutput").GetSection("SystemId").Value);
+			});
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

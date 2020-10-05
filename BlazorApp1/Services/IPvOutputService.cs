@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace BlazorApp1.Services
 {
-	public interface IGoodweService
+	public interface IPvOutputService
 	{
-		Task<bool> TokenRequest();
-		Task<GoodweData> GetData();
+		void AddStatus(GoodweData goodweData);
+
+		string GetStatus();
 	}
 }
