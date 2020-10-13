@@ -114,3 +114,5 @@ C:\Users\hasan.kose\source\repos\GoodweToPvOutput\BlazorApp1\obj\Debug\netcoreap
 C:\Users\hasan.kose\source\repos\GoodweToPvOutput\BlazorApp1\obj\Debug\netcoreapp3.1\Razor\Shared\NavMenu.razor.g.cs
 C:\Users\hasan.kose\source\repos\GoodweToPvOutput\BlazorApp1\obj\Debug\netcoreapp3.1\Razor\Shared\SurveyPrompt.razor.g.cs
 C:\Users\hasan.kose\source\repos\GoodweToPvOutput\BlazorApp1\obj\Debug\netcoreapp3.1\Razor\_Imports.razor.g.cs
+C:\Users\hasan.kose\source\repos\GoodweToPvOutput\BlazorApp1\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Domoticz.razor.g.cs
+C:\Users\hasan.kose\source\repos\GoodweToPvOutput\BlazorApp1\obj\Debug\netcoreapp3.1\Razor\Pages\Domoticz.razor.g.cs

@@ -1,0 +1,14 @@
+﻿@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
+
+.test {
+    margin-bottom: 1em;
+    border-style: solid;
+    padding: 1em;
+    background: lightgray;
+    background-clip: content-box;
+    border-radius: 10px;
+}
+
+.box-shadow {
+   box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .05);
+}

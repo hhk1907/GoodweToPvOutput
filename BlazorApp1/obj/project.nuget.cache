@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "e1Hci9TrLzi+3vgqPK9JrlwCBPfM/qJ7iRjpipOyGGI8HyYt1yi0utvxANWKTJFl3rb0vT4Y69/SvlfGGUn05A==",
+  "dgSpecHash": "bW7P2judtDxeu9guAaDqiqiPEQytskMyXNd+a37+sfLFLSQ8kCcne5HqDBpLeKJRdbQk35H3/mlI+3FtR3OmXQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\hasan.kose\\source\\repos\\GoodweToPvOutput\\BlazorApp1\\BlazorApp1.csproj",
+  "projectFilePath": "C:\\Users\\hasan.kose\\Source\\Repos\\GoodweToPvOutput\\BlazorApp1\\BlazorApp1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hasan.kose\\.nuget\\packages\\microsoft.aspnetcore.blazor.httpclient\\3.2.0-preview3.20168.3\\microsoft.aspnetcore.blazor.httpclient.3.2.0-preview3.20168.3.nupkg.sha512",
     "C:\\Users\\hasan.kose\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.1\\microsoft.netcore.platforms.1.1.1.nupkg.sha512",

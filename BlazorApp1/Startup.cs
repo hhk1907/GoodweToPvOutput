@@ -41,6 +41,11 @@ namespace BlazorApp1
 				client.DefaultRequestHeaders.Add("X-Pvoutput-Apikey", Configuration.GetSection("PvOutput").GetSection("ApiKey").Value);
 				client.DefaultRequestHeaders.Add("X-Pvoutput-SystemId", Configuration.GetSection("PvOutput").GetSection("SystemId").Value);
 			});
+			services.AddHttpClient<IDomoticzService, DomoticzService>(client => 
+			{
+				client.BaseAddress = new Uri("http://192.168.1.54:8080");
+				client.DefaultRequestHeaders.Add("Accept", "application/json");
+			});
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -27,9 +27,9 @@ namespace BlazorApp1.Pages
 
 		protected override async Task OnInitializedAsync()
 		{
-			await Task.Run(GoodweService.TokenRequest);
-			ConfigureTimer();
-			this.GoodweData = new List<GoodweData>();
+			//await Task.Run(GoodweService.TokenRequest);
+			//ConfigureTimer();
+			//this.GoodweData = new List<GoodweData>();
 		}
 
 		private void ConfigureTimer()
