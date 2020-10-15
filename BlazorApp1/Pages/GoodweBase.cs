@@ -27,14 +27,14 @@ namespace BlazorApp1.Pages
 
 		protected override async Task OnInitializedAsync()
 		{
-			//await Task.Run(GoodweService.TokenRequest);
-			//ConfigureTimer();
-			//this.GoodweData = new List<GoodweData>();
+			await Task.Run(GoodweService.TokenRequest);
+			ConfigureTimer();
+			this.GoodweData = new List<GoodweData>();
 		}
 
 		private void ConfigureTimer()
 		{
-			timer = new Timer(300000);
+			timer = new Timer(10000);
 			timer.Elapsed += Timer_Elapsed;
 			timer.Enabled = true;
 		}
@@ -48,7 +48,7 @@ namespace BlazorApp1.Pages
 
 			GoodweData.Add(latestData);
 
-			PvOutputService.AddStatus(latestData);
+			//PvOutputService.AddStatus(latestData);
 
 			if (GoodweData.Count > 100)
 				GoodweData.RemoveAt(0);

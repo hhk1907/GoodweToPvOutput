@@ -9,6 +9,7 @@ namespace BlazorApp1.Services
 	public interface IPvOutputService
 	{
 		void AddStatus(GoodweData goodweData);
+		void AddStatus(PvOutputData pvOutputData);
 
 		string GetStatus();
 	}

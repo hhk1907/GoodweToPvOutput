@@ -19,8 +19,6 @@ namespace BlazorApp1.Services
 			this.httpClient = httpClient;
 		}
 
-
-
 		public async Task<DomoticzData> GetDomoticzData()
 		{
 			var result = await httpClient.GetJsonAsync<DomoticzData>("/json.htm?type=devices&used=true&displayhidden=1");

@@ -26,5 +26,10 @@ namespace GoodweDataManagement.Models
 		/// </summary>
 		public int PowerGeneration { get; set; }
 
+		/// <summary>
+		/// The current watts being used.
+		/// </summary>
+		public int PowerConsumption { get; set; }
+
 	}
 }

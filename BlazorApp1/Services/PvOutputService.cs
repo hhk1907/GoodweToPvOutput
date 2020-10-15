@@ -17,7 +17,34 @@ namespace BlazorApp1.Services
 			HttpClient = httpClient;
 		}
 
+		public async void AddStatus(PvOutputData pvOutputData)
+		{
+			var parameters = new Dictionary<string, string> {
+				{ "d", pvOutputData.Date },
+				{ "t", pvOutputData.Time },
+				{ "v1", pvOutputData.EnergyGeneration.ToString() },
+				{ "v2", pvOutputData.PowerGeneration.ToString() },
+				{ "v4", pvOutputData.PowerConsumption.ToString() },
+				{ "n", "1" }
+			};
 
+			var encodedContent = new FormUrlEncodedContent(parameters);
+
+			try
+			{
+				var response = await HttpClient.PostAsync("addstatus.jsp", encodedContent);
+				if (response.StatusCode == HttpStatusCode.OK)
+				{
+					var resultString = await response.Content.ReadAsStringAsync();
+				}
+			}
+			catch (Exception ex)
+			{
+
+				throw;
+			}
+
+		}
 
 		public async void AddStatus(GoodweData goodweData)
 		{

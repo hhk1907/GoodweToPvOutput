@@ -447,11 +447,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hasan.kose\\Source\\Repos\\GoodweToPvOutput\\BlazorApp1\\BlazorApp1.csproj",
+      "projectUniqueName": "C:\\Users\\hasan.kose\\source\\repos\\GoodweToPvOutput\\BlazorApp1\\BlazorApp1.csproj",
       "projectName": "BlazorApp1",
-      "projectPath": "C:\\Users\\hasan.kose\\Source\\Repos\\GoodweToPvOutput\\BlazorApp1\\BlazorApp1.csproj",
+      "projectPath": "C:\\Users\\hasan.kose\\source\\repos\\GoodweToPvOutput\\BlazorApp1\\BlazorApp1.csproj",
       "packagesPath": "C:\\Users\\hasan.kose\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hasan.kose\\Source\\Repos\\GoodweToPvOutput\\BlazorApp1\\obj\\",
+      "outputPath": "C:\\Users\\hasan.kose\\source\\repos\\GoodweToPvOutput\\BlazorApp1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -474,8 +474,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\hasan.kose\\Source\\Repos\\GoodweToPvOutput\\GoodweDataManagement.Models\\GoodweDataManagement.Models.csproj": {
-              "projectPath": "C:\\Users\\hasan.kose\\Source\\Repos\\GoodweToPvOutput\\GoodweDataManagement.Models\\GoodweDataManagement.Models.csproj"
+            "C:\\Users\\hasan.kose\\source\\repos\\GoodweToPvOutput\\GoodweDataManagement.Models\\GoodweDataManagement.Models.csproj": {
+              "projectPath": "C:\\Users\\hasan.kose\\source\\repos\\GoodweToPvOutput\\GoodweDataManagement.Models\\GoodweDataManagement.Models.csproj"
             }
           }
         }

@@ -11,6 +11,19 @@ namespace GoodweDataManagement.Models.Domoticz
 		public double AddjValue { get; set; }
 		public double AddjValue2 { get; set; }
 		public int BatteryLevel { get; set; }
+		/// <summary>
+		/// Current delivery
+		/// </summary>
+		public string UsageDeliv { get; set; }
+
+		public string Counter { get; set; }
+		public string CounterDeliv { get; set; }
+
+		/// <summary>
+		/// Total delivered today
+		/// </summary>
+		public string CounterDelivToday { get; set; }
+		public string CounterToday { get; set; }
 		public string Color { get; set; }
 		public int CustomImage { get; set; }
 		public string Data { get; set; }
@@ -48,6 +61,7 @@ namespace GoodweDataManagement.Models.Domoticz
 		public string Type { get; set; }
 		public string TypeImg { get; set; }
 		public int Unit { get; set; }
+		public string Usage { get; set; }
 		public int Used { get; set; }
 		public bool UsedByCamera { get; set; }
 		public string XOffset { get; set; }

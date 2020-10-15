@@ -4,7 +4,7 @@
 
 <button class="btn btn-primary" @onclick="GetDomoticzData">Click me</button>
 
-@if (domoticzData == null)
+@*@if (domoticzData == null)
 {
     <p><em>Loading...</em></p>
 }
@@ -28,9 +28,9 @@ else
             }
         </div>
     </div>
-}
+}*@
 
-@*@if (GoodweData == null || GoodweData.Count == 0)
+@if (PvOutputDataList == null || PvOutputDataList.Count == 0)
     {
         <p><em>Loading...</em></p>
     }
@@ -39,22 +39,24 @@ else
         <table class="table">
             <thead>
                 <tr>
-                    <th>Timestamp</th>
-                    <th>Output power</th>
-                    <th>Output voltage</th>
-                    <th>ETotal</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Energy Generation v1</th>
+                    <th>Power Generation v2</th>
+                    <th>Power Consumption v4</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach (var data in GoodweData)
+                @foreach (var data in PvOutputDataList)
                 {
-                    <tr>
-                        <td>@data.TimeStamp</td>
-                        <td>@data.OutputPower</td>
-                        <td>@data.OutputVoltage</td>
-                        <td>@data.ETotal</td>
-                    </tr>
+                <tr>
+                    <td>@data.Date</td>
+                    <td>@data.Time</td>
+                    <td>@data.EnergyGeneration</td>
+                    <td>@data.PowerGeneration</td>
+                    <td>@data.PowerConsumption</td>
+                </tr>
                 }
             </tbody>
         </table>
-    }*@
+    }
