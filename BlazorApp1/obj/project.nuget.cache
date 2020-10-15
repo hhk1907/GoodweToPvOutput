@@ -1,11 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "OOB8HUCZNRpY7643N+vXeTSsF+nSV7p5BhIYnym8iB3hkQRfV89fWaLOYRnnHTiUODeP9fQ7FFQOenEsXlUgEg==",
+  "dgSpecHash": "e1Hci9TrLzi+3vgqPK9JrlwCBPfM/qJ7iRjpipOyGGI8HyYt1yi0utvxANWKTJFl3rb0vT4Y69/SvlfGGUn05A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\hasan.kose\\Source\\Repos\\GoodweToPvOutput\\BlazorApp1\\BlazorApp1.csproj",
+  "projectFilePath": "C:\\Users\\hasan.kose\\source\\repos\\GoodweToPvOutput\\BlazorApp1\\BlazorApp1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hasan.kose\\.nuget\\packages\\microsoft.aspnetcore.blazor.httpclient\\3.2.0-preview3.20168.3\\microsoft.aspnetcore.blazor.httpclient.3.2.0-preview3.20168.3.nupkg.sha512",
+    "C:\\Users\\hasan.kose\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.1\\microsoft.netcore.platforms.1.1.1.nupkg.sha512",
+    "C:\\Users\\hasan.kose\\.nuget\\packages\\microsoft.netcore.targets\\1.1.3\\microsoft.netcore.targets.1.1.3.nupkg.sha512",
+    "C:\\Users\\hasan.kose\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512",
     "C:\\Users\\hasan.kose\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\hasan.kose\\.nuget\\packages\\system.runtime\\4.3.1\\system.runtime.4.3.1.nupkg.sha512",
+    "C:\\Users\\hasan.kose\\.nuget\\packages\\system.runtime.extensions\\4.3.1\\system.runtime.extensions.4.3.1.nupkg.sha512",
     "C:\\Users\\hasan.kose\\.nuget\\packages\\system.text.json\\4.7.1\\system.text.json.4.7.1.nupkg.sha512"
   ],
   "logs": []

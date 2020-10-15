@@ -1,0 +1,62 @@
+﻿@page "/domoticz"
+@inherits DomoticzBase
+<h3>Domoticz</h3>
+
+<button class="btn btn-primary" @onclick="GetDomoticzData">Click me</button>
+
+@*@if (domoticzData == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div class="container">
+        <div class="row">
+            @foreach(GoodweDataManagement.Models.Domoticz.DomoticzDataResult result in domoticzData.Result)
+            {
+                <div class="col-4">
+                    <div class="card mb-4 box-shadow">
+                        <div class="card-body">
+                            HardwareName: @result.HardwareName <br />
+                            HardwareType: @result.HardwareType <br />
+                            Type: @result.Type <br />
+                            Data: @result.Data <br />
+                            Idx: @result.idx <br />
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}*@
+
+@if (PvOutputDataList == null || PvOutputDataList.Count == 0)
+    {
+        <p><em>Loading...</em></p>
+    }
+    else
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Energy Generation v1</th>
+                    <th>Power Generation v2</th>
+                    <th>Power Consumption v4</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var data in PvOutputDataList)
+                {
+                <tr>
+                    <td>@data.Date</td>
+                    <td>@data.Time</td>
+                    <td>@data.EnergyGeneration</td>
+                    <td>@data.PowerGeneration</td>
+                    <td>@data.PowerConsumption</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    }
