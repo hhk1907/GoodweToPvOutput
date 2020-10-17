@@ -1,8 +1,8 @@
 ﻿@page "/domoticz"
 @inherits DomoticzBase
 <h3>Domoticz</h3>
-
-<button class="btn btn-primary" @onclick="GetDomoticzData">Click me</button>
+<h6>17-10-2020 12:11</h6>
+@*<button class="btn btn-primary" @onclick="GetDomoticzData">Click me</button>*@
 
 @*@if (domoticzData == null)
 {
@@ -29,7 +29,9 @@ else
         </div>
     </div>
 }*@
-
+<div>
+    @httpResonse
+</div>
 @if (PvOutputDataList == null || PvOutputDataList.Count == 0)
     {
         <p><em>Loading...</em></p>
@@ -43,6 +45,7 @@ else
                     <th>Time</th>
                     <th>Energy Generation v1</th>
                     <th>Power Generation v2</th>
+                    <th>Energy Consumption v3</th>
                     <th>Power Consumption v4</th>
                 </tr>
             </thead>
@@ -54,6 +57,7 @@ else
                     <td>@data.Time</td>
                     <td>@data.EnergyGeneration</td>
                     <td>@data.PowerGeneration</td>
+                    <td>@data.EnergyConsumption</td>
                     <td>@data.PowerConsumption</td>
                 </tr>
                 }

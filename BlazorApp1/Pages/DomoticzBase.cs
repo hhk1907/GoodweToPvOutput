@@ -4,7 +4,6 @@ using GoodweDataManagement.Models.Domoticz;
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Timers;
@@ -22,13 +21,15 @@ namespace BlazorApp1.Pages
 		int p1MeterIdx = 24;
 
 		public DomoticzData domoticzData;
+		public bool ok = true;
 
 		private Timer timer;
 		public List<PvOutputData> PvOutputDataList { get; set; }
+		public string httpResonse { get; set; }
 
 		protected override Task OnInitializedAsync()
 		{
-			this.timer = new Timer(300000);
+			this.timer = new Timer(10000);
 			timer.Elapsed += Timer_Elapsed;
 			timer.Enabled = true;
 			this.PvOutputDataList = new List<PvOutputData>();
@@ -37,13 +38,18 @@ namespace BlazorApp1.Pages
 
 		private async void Timer_Elapsed(object sender, ElapsedEventArgs e)
 		{
-			var energyGenerationData = await DomoticzService.GetDeviceByIdx(energyGenerationIdx);
-			var p1MeterData = await DomoticzService.GetDeviceByIdx(p1MeterIdx);
+			if (ok)
+			{
+				ok = false;
 
-			SendDataToPvOutput(energyGenerationData, p1MeterData);
+				var energyGenerationData = await DomoticzService.GetDeviceByIdx(energyGenerationIdx);
+				var p1MeterData = await DomoticzService.GetDeviceByIdx(p1MeterIdx);
+
+				SendDataToPvOutput(energyGenerationData, p1MeterData);
+			}
 		}
 
-		private void SendDataToPvOutput(DomoticzData energyGenerationData, DomoticzData p1MeterData)
+		private async void SendDataToPvOutput(DomoticzData energyGenerationData, DomoticzData p1MeterData)
 		{
 			PvOutputData pvOutputData = new PvOutputData();
 			pvOutputData.Date = DateTime.Parse(energyGenerationData.Result[0].LastUpdate).ToString("yyyyMMdd");
@@ -51,25 +57,34 @@ namespace BlazorApp1.Pages
 			pvOutputData.EnergyGeneration = int.Parse(Regex.Replace(energyGenerationData.Result[0].CounterToday, "[^0-9]", ""));
 			pvOutputData.PowerGeneration = int.Parse(Regex.Replace(energyGenerationData.Result[0].Usage, "[^0-9]", ""));
 
-
 			//Energy
-			var counterToday = p1MeterData.Result[0].CounterToday;
-			var deliveryToday = p1MeterData.Result[0].CounterDelivToday;
+			var counterToday = int.Parse(Regex.Replace(p1MeterData.Result[0].CounterToday, "[^0-9]", ""));
+			var deliveryToday = int.Parse(Regex.Replace(p1MeterData.Result[0].CounterDelivToday, "[^0-9]", ""));
+			var energyConsumptionToday = counterToday + (pvOutputData.EnergyGeneration - deliveryToday);
 
 			// Power
 			var usage = int.Parse(Regex.Replace(p1MeterData.Result[0].Usage, "[^0-9]", ""));
 			var delivery = int.Parse(Regex.Replace(p1MeterData.Result[0].UsageDeliv, "[^0-9]", ""));
-			var powerConsumption = usage - delivery;
+			var powerConsumption = usage + pvOutputData.PowerGeneration - delivery;
 
+			pvOutputData.EnergyConsumption = energyConsumptionToday; 
 			pvOutputData.PowerConsumption = powerConsumption;
 
-			PvOutputDataList.Add(pvOutputData);
-			if (PvOutputDataList.Count > 50)
-				PvOutputDataList.RemoveAt(0);
 
-			PvOutputService.AddStatus(pvOutputData);
 
-			InvokeAsync(StateHasChanged);
+			var response = await PvOutputService.AddStatus(pvOutputData);
+			if (response.StatusCode == System.Net.HttpStatusCode.OK)
+			{
+				PvOutputDataList.Add(pvOutputData);
+				if (PvOutputDataList.Count > 50)
+					PvOutputDataList.RemoveAt(0);
+			}
+
+			var result = await response.Content.ReadAsStringAsync();
+			httpResonse = pvOutputData.Time + " " + result;
+			Console.WriteLine(result);
+
+			await InvokeAsync(StateHasChanged);
 		}
 
 		public async void GetDomoticzData()

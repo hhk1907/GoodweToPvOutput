@@ -31,5 +31,11 @@ namespace GoodweDataManagement.Models
 		/// </summary>
 		public int PowerConsumption { get; set; }
 
+		/// <summary>
+		/// Total Watt Hours consumed so far for the current day, so this should start at 0 and steadily increase or stay the same during the day (WattHour)
+		/// </summary>
+
+		public int EnergyConsumption { get; set; }
+
 	}
 }
