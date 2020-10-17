@@ -21,7 +21,6 @@ namespace BlazorApp1.Pages
 		int p1MeterIdx = 24;
 
 		public DomoticzData domoticzData;
-		public bool ok = true;
 
 		private Timer timer;
 		public List<PvOutputData> PvOutputDataList { get; set; }
@@ -29,7 +28,7 @@ namespace BlazorApp1.Pages
 
 		protected override Task OnInitializedAsync()
 		{
-			this.timer = new Timer(10000);
+			this.timer = new Timer(300000);
 			timer.Elapsed += Timer_Elapsed;
 			timer.Enabled = true;
 			this.PvOutputDataList = new List<PvOutputData>();
@@ -38,15 +37,10 @@ namespace BlazorApp1.Pages
 
 		private async void Timer_Elapsed(object sender, ElapsedEventArgs e)
 		{
-			if (ok)
-			{
-				ok = false;
+			var energyGenerationData = await DomoticzService.GetDeviceByIdx(energyGenerationIdx);
+			var p1MeterData = await DomoticzService.GetDeviceByIdx(p1MeterIdx);
 
-				var energyGenerationData = await DomoticzService.GetDeviceByIdx(energyGenerationIdx);
-				var p1MeterData = await DomoticzService.GetDeviceByIdx(p1MeterIdx);
-
-				SendDataToPvOutput(energyGenerationData, p1MeterData);
-			}
+			SendDataToPvOutput(energyGenerationData, p1MeterData);
 		}
 
 		private async void SendDataToPvOutput(DomoticzData energyGenerationData, DomoticzData p1MeterData)
@@ -67,7 +61,7 @@ namespace BlazorApp1.Pages
 			var delivery = int.Parse(Regex.Replace(p1MeterData.Result[0].UsageDeliv, "[^0-9]", ""));
 			var powerConsumption = usage + pvOutputData.PowerGeneration - delivery;
 
-			pvOutputData.EnergyConsumption = energyConsumptionToday; 
+			pvOutputData.EnergyConsumption = energyConsumptionToday;
 			pvOutputData.PowerConsumption = powerConsumption;
 
 
